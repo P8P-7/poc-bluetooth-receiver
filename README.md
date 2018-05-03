@@ -48,7 +48,7 @@
 
 6. Build Bluetooth Reciever.
    ```bash
-   git clone https://github.com/hidder11/poc_bluetooth_reviever.git
+   git clone https://github.com/hidder11/poc_bluetooth_reciever.git
    cd poc_bluetooth_reciever
    cmake .
    make
