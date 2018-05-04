@@ -3,7 +3,7 @@ project(poc_bluetooth)
 
 set(CMAKE_CXX_STANDARD 11)
 
-find_library(libserial REQUIRED)
+find_package(Boost COMPONENTS system REQUIRED)
 
 find_package(cppzmq REQUIRED)
 
@@ -12,5 +12,9 @@ include_directories(${cppzmq_INCLUDE_DIR})
 add_executable(Publisher controlPublisher.cpp)
 add_executable(Subscriber controlSubscriber.cpp)
 
-target_link_libraries(Publisher serial ${cppzmq_LIBRARY})
+target_link_libraries(Publisher
+        pthread
+        ${Boost_SYSTEM_LIBRARY}
+        ${cppzmq_LIBRARY})
+
 target_link_libraries(Subscriber ${cppzmq_LIBRARY})

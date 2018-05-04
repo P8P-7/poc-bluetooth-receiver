@@ -37,16 +37,7 @@
    sudo cp *.a /usr/lib
    ```
 
-5. Build and install [libserial](https://github.com/crayzeewulf/libserial).
-   ```bash  
-   git clone https://github.com/crayzeewulf/libserial.git
-   cd libserial
-   make -f Makefile.dist
-   ./configure 
-   sudo make -j4 install
-   ```
-
-6. Build Bluetooth Reciever.
+5. Build Bluetooth Reciever.
    ```bash
    git clone https://github.com/hidder11/poc_bluetooth_reciever.git
    cd poc_bluetooth_reciever
@@ -72,7 +63,7 @@
    sudo rfcomm watch hci0
    ```
    Now connect your bluetooth device to the raspberry.
-  
+
 3. Start the broker and subscriber.
 
 4. Start the publisher.
