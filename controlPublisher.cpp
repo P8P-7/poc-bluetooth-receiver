@@ -40,13 +40,15 @@ int main(int argc, char *argv[]) { // enter device as argument to change device
         }
 
         std::string command(buffer);
+        std::size_t begin_pos = command.find('{');
+        std::size_t end_pos = command.find('}');
         std::size_t separator_pos = command.find(':');
 
-        std::string control = command.substr(1, separator_pos - 1); // Substring between '{' and ':'
+        std::string control = command.substr(begin_pos+1, separator_pos - begin_pos - 1); // Substring between '{' and ':'
         std::string state = command.substr(separator_pos + 1,
-                                           command.length() - separator_pos - 2); // Substring between ':' and '}'
+                                           end_pos - separator_pos - 1); // Substring between ':' and '}'
 
-        cout << "command: " << command << endl << "control: " << control << endl << "state: " << state << endl;
+        cout << "command: " << command << endl << "control: " << control << endl << "state: " << state << endl << endl;
 
         // Send topic
         s_sendmore(publisher, topic);
