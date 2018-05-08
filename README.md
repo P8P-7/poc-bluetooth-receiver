@@ -1,4 +1,4 @@
-# Bluetooth Reciever
+# Bluetooth Receiver
 *Proof of Concept*
 
 ## Build steps
@@ -46,10 +46,10 @@
    sudo make -j4 install
    ```
 
-6. Build Bluetooth Reciever.
+6. Build Bluetooth Receiver.
    ```bash
-   git clone https://github.com/hidder11/poc_bluetooth_reciever.git
-   cd poc_bluetooth_reciever
+   git clone https://github.com/hidder11/poc_bluetooth_receiver.git
+   cd poc_bluetooth_receiver
    cmake .
    make
    ```
